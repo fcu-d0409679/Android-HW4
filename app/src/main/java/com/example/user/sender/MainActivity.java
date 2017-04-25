@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
             intent.setAction("lincyu.NOTIFICATION");//呼叫接收者的通關密語
             intent.putExtra("Name_Key", name);//第一個參數是使用第二個參數的通關密語
             sendBroadcast(intent);
-            Toast.makeText(MainActivity.this, "HW4.1\n廣播已發送 : "+name, Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, "HW4.1\n廣播已發送 : "+name, Toast.LENGTH_SHORT).show();//測試用Toast
         }
 
     };
