@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -42,14 +43,15 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    View.OnClickListener sayHello = new View.OnClickListener() {
+    private View.OnClickListener sayHello = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+            String name = edName.getText().toString();//把使用者輸入的值存起來
             Intent intent = new Intent();
-            intent.setAction("lincyu.NOTIFICATION");
-            String name = edName.getText().toString();
-            intent.putExtra("Name", name);
+            intent.setAction("lincyu.NOTIFICATION");//呼叫接收者的通關密語
+            intent.putExtra("Name_Key", name);//第一個參數是使用第二個參數的通關密語
             sendBroadcast(intent);
+            Toast.makeText(MainActivity.this, "HW4.1\n廣播已發送 : "+name, Toast.LENGTH_SHORT).show();
         }
 
     };
